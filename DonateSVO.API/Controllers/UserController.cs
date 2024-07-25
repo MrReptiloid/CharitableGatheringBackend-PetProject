@@ -28,10 +28,33 @@ public class UserController: ControllerBase
     [HttpPost]
     public async Task<ActionResult> Login(LoginUserRequest request)
     {
-        var token = await _userService.Login(request.UserName, request.Password);
+        var token = string.Empty;
+        try
+        {
+            token  = await _userService.Login(request.UserName, request.Password);
+        }
+        catch (Exception e)
+        {
+            return UnprocessableEntity(e.Message);
+        }
         
         HttpContext.Response.Cookies.Append("tasty-cookies", token);
         
         return Ok(token);
     }
+
+    [Route("verify")]
+    [HttpGet]
+    public async Task<IActionResult> Verify()
+    {
+        var tokenValue = HttpContext.Request.Cookies["tasty-cookies"];
+
+        var result = await _userService.Verify(tokenValue);
+
+        if (!result)
+            return Unauthorized();
+        
+        return Ok(result);
+    }
+    
 }

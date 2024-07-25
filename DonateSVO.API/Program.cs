@@ -43,15 +43,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors(x =>
 {
-    x.WithOrigins("http://localhost:5173","http://localhost:5174");
+    x.WithOrigins("http://localhost");
     x.WithMethods().AllowAnyMethod();
     x.WithHeaders().AllowAnyHeader();
+    x.AllowCredentials();
 });
 
 app.UseCookiePolicy(new CookiePolicyOptions
 {
-    MinimumSameSitePolicy = SameSiteMode.Strict,
-    HttpOnly = HttpOnlyPolicy.Always,
+    MinimumSameSitePolicy = SameSiteMode.None,
+    HttpOnly = HttpOnlyPolicy.None,
     Secure = CookieSecurePolicy.Always
 });
 

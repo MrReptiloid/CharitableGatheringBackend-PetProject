@@ -32,4 +32,9 @@ public class JwtProvider(IOptions<JwtOptions> options) : IJwtProvider
         var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
         return tokenValue;
     }
+
+    public JwtSecurityToken ToToken(string tokenValue)
+    {
+        return new JwtSecurityTokenHandler().ReadJwtToken(tokenValue);
+    }
 }

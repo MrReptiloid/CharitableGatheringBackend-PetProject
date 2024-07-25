@@ -43,4 +43,20 @@ public class UserService : IUserService
         
         return token;
     }
+
+    public async Task<bool> Verify(string tokenValue)
+    {
+        if (string.IsNullOrEmpty(tokenValue))
+            return false;
+        
+        var token = _jwtProvider.ToToken(tokenValue);
+
+        var userName = token.Claims.FirstOrDefault(c => c.Type == "userName")?.Value;
+
+        var user = await _userRepository.GetByUserName(userName);
+        if (user == null)
+            return false;
+
+        return true;
+    }
 }
