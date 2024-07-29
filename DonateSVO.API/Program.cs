@@ -24,7 +24,7 @@ builder.Services.AddDbContext<DonateSvoDbContext>(
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(DonateSvoDbContext)));
     });
 
-builder.Services.AddScoped<IGatheringsRepository, GatheringsRepository>();
+builder.Services.AddScoped<IGatheringRepository, GatheringRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<IGatheringService, GatheringService>();

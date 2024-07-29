@@ -2,7 +2,7 @@
 
 namespace DonateSVO.Core.Abstractions;
 
-public interface IGatheringsRepository
+public interface IGatheringRepository
 {
     Task<Guid> Create(Gathering gathering);
     Task<Guid> Delete(Guid id);

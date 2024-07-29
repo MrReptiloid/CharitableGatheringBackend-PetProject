@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonateSVO.API", "DonateSVO.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonateSVO.Infrastructure", "DonateSVO.Infrastructure\DonateSVO.Infrastructure.csproj", "{D44C0638-1565-458B-B381-7EBF81C2800C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonateSVO.Tests", "DonateSVO.Tests\DonateSVO.Tests.csproj", "{969037D2-4566-43D6-BCE0-ACAE2E5590C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{D44C0638-1565-458B-B381-7EBF81C2800C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D44C0638-1565-458B-B381-7EBF81C2800C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D44C0638-1565-458B-B381-7EBF81C2800C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969037D2-4566-43D6-BCE0-ACAE2E5590C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969037D2-4566-43D6-BCE0-ACAE2E5590C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969037D2-4566-43D6-BCE0-ACAE2E5590C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969037D2-4566-43D6-BCE0-ACAE2E5590C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

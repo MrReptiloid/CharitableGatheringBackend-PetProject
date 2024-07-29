@@ -32,7 +32,8 @@ public class GatheringController : ControllerBase
             g.MembersCount,
             g.IsVerified
         ));
-
+        
+        
         return Ok(response);
     }
 

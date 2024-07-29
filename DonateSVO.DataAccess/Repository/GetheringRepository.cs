@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DonateSVO.DataAccess.Repository;
 
-public class GatheringsRepository : IGatheringsRepository
+public class GatheringRepository : IGatheringRepository
 {
     private readonly DonateSvoDbContext _context;
         
-    public GatheringsRepository(DonateSvoDbContext context)
+    public GatheringRepository(DonateSvoDbContext context)
     {
         _context = context;
     }

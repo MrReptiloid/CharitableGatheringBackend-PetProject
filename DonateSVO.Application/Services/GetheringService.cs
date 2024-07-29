@@ -5,18 +5,18 @@ namespace DonateSVO.Services.Services;
 
 public class GatheringService : IGatheringService
 {
-    private readonly IGatheringsRepository _gatheringsRepository;
+    private readonly IGatheringRepository _gatheringRepository;
 
-    public GatheringService(IGatheringsRepository gatheringsRepository)
+    public GatheringService(IGatheringRepository gatheringRepository)
     {
-        _gatheringsRepository = gatheringsRepository;
+        _gatheringRepository = gatheringRepository;
     }
 
     public async Task<List<Gathering>> GetAllGatherings() =>
-        await _gatheringsRepository.Get();
+        await _gatheringRepository.Get();
 
     public async Task<Guid> CreateGathering(Gathering gathering) =>
-        await _gatheringsRepository.Create(gathering);
+        await _gatheringRepository.Create(gathering);
 
     public async Task<Guid> UpdateGathering(
         Guid id,
@@ -27,7 +27,7 @@ public class GatheringService : IGatheringService
         int membersCount,
         bool isVerified
     ) => 
-        await _gatheringsRepository.Update(
+        await _gatheringRepository.Update(
             id, 
             title, 
             description, 
@@ -38,5 +38,5 @@ public class GatheringService : IGatheringService
         );
 
     public async Task<Guid> DeleteGathering(Guid id) =>
-        await _gatheringsRepository.Delete(id);
+        await _gatheringRepository.Delete(id);
 }
